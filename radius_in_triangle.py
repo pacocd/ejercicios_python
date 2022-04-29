@@ -1,11 +1,18 @@
-import math
+from math import sqrt
 
-a = 3
-b = 4
-c = 5
+def semiperimeter(a, b, c):
+    return (a + b + c) / 2
 
-s = (a + b + c) / 2 # semiperimeter
+def calculateCircleRadiusInTriangle(a, b, c):
+    area = calculateTriangleArea(a, b, c)
 
-radius = math.sqrt(s * (s - a) * (s - b) * (s - c)) / s
+    return area / semiperimeter(a, b, c)
 
-print(radius)
+def calculateTriangleArea(a, b, c):
+    s = semiperimeter(a, b ,c)
+
+    return sqrt(s * (s - a) * (s - b) * (s - c))
+
+print(calculateCircleRadiusInTriangle(3, 4, 5))
+print(calculateCircleRadiusInTriangle(2, 2, 3))
+print(calculateCircleRadiusInTriangle(13, 14, 15))
