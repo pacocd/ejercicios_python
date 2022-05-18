@@ -1,4 +1,5 @@
 import functools
+from scipy.interpolate import lagrange
 
 coordinate1 = (-4, -2)
 coordinate2 = (1, 5)
@@ -9,7 +10,7 @@ def fn(y, c0, c1):
 
     return a * b + c0[0]
 
-print(fn(3.7, coordinate1, coordinate2))
+print("Ejercicio 1:\n" + str(fn(3.7, coordinate1, coordinate2)))
 
 
 homework = [(-2, 4), (-1, -2), (3, 5), (4.3, 11)]
@@ -40,6 +41,13 @@ def divisionOperation(x, coordinates):
 
 # Ejercicio de Tarea
 
-print("Ejercicio de tarea")
+print("Ejercicio 2:")
 print(homework, "x =", 7.7)
 print(interpolatingPolynomial(7.7, homework))
+
+# Ejercicio 3
+
+x = [-1, 0, 4, 5]
+y = [3, -7, 7, 11]
+
+print("Ejercicio 3: \n" + str(lagrange(x, y)))
